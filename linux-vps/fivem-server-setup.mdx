@@ -4,82 +4,85 @@ description: "How to setup a FiveM server on a Linux VPS"
 icon: "server"
 ---
 
-## Step 1: Connect to your Linux VPS
+## Step 1: Connect to Your Linux VPS
 
-You can connect to your vps by using an SSH tool like putty which can be found [here](https://putty.org/index.html)
+Connect to your VPS using an SSH tool like [PuTTY](https://putty.org/index.html).
 
-When you open putty you will be greeted with an interface like this
+When you open PuTTY, you'll see an interface like this:
 
 <img
   src="/images/linux/fivemserversetup/putty.jpg"
-  alt="Putty interface"
+  alt="PuTTY interface"
 />
 
-After reaching this screen you will put in two things. The first one will be your Host Name (IP Address) and the second thing will be the port (Always 22 in most cases).
+Enter two things on this screen: your Host Name (IP address), and the port (usually `22`).
 
-After putting that information in you will be greeted with a screen that looks like this
+After entering that information, you'll see a login screen:
 
 <img
 src="/images/linux/fivemserversetup/puttylogin.jpg"
-alt="Putty login"
+alt="PuTTY login"
 />
-Put in the username you got in your email when you bought your VPS. (Most times its root)
+
+Enter the username from the email you received when you bought your VPS (usually `root`).
 
 <img
   src="/images/linux/fivemserversetup/puttypassword.jpg"
-  alt="Putty Password"
+  alt="PuTTY password"
 />
 
-You will then reach the page above put in your password that you get in the same email you got when you bought your vps.
+On the next screen, enter the password from that same email.
 
 
-## Step 2: Go to your home directory
+## Step 2: Go to Your Home Directory
 
-You can go to your home directory by pasting or typing this command in.
+Paste or type this command to change to your home directory:
 
 ```bash
 cd /home
 ```
 
-## Step 3: Make your FiveM Directory
+## Step 3: Create Your FiveM Directory
 
-Make your five directory and go into it.
+Create a `fivem` directory and change into it:
 
 ```bash
 mkdir fivem
 cd fivem
 ```
 
-## Step 4: Install your FiveM artifacts in your directory.
+## Step 4: Install Your FiveM Artifacts
 
-You can get your FiveM Linux Artifacts [here](https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/)
+Get your FiveM Linux artifacts from the [FiveM artifacts page](https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/).
 
-When you get to that website you will be greeted with a site that looks like this.
+When you open that page, you'll see a site like this:
 
 <img
   src="/images/linux/fivemserversetup/fivemlinux.jpg"
   alt="FiveM Linux Artifacts Website"
 />
 
-Right click on the artifacts you want and hit copy link address.
+Right-click the artifact you want and select **Copy link address**.
 
-Head back to your Linux VPS and run the following commands (replace the link with your artifacts link)
+Head back to your Linux VPS and run the following command (replace the link with your artifact link):
 
 ```bash
 wget https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/23683-1062db8a7b8e0c03f7c159be4cbfa181f49b2cc1/fx.tar.xz
 ```
-It will download all the files for the artifacts. After that is done you will run the following command
+
+This downloads all the artifact files. Once the download is done, run:
 
 ```bash
 tar -xvf fx.tar.xz
 ```
-It will then unzip the artifacts and install them in the directory.
+
+This unzips the artifacts and installs them in the directory.
 
 
-## Step 5: tmux your session
+## Step 5: Start a tmux Session
 
-In order to ensure your server stays up after leaving the putty window you must enter a tmux session.
-90% of the time tmux is installed but in case its not run the following commands
+To keep your server running after you close the PuTTY window, start a tmux session.
+`tmux` is usually already installed, but if it isn't, run the following commands.
 
 Debian/Ubuntu/Mint/Kali:
 ```bash
@@ -92,19 +95,19 @@ sudo dnf install tmux -y
 # For older CentOS/RHEL versions, you may need EPEL:
 # sudo yum install epel-release -y && sudo yum install tmux
 ```
-Verify your installation by typing
+Verify your installation by typing:
 ```bash
 tmux -v
 ```
-Then enter your session by typing
+Then start your session by typing:
 ```bash
 tmux
 ```
 
-## Step 6: Open your fivem ports
+## Step 6: Open Your FiveM Ports
 
-You will need to port forward your fivem ports in order to use & setup txadmin and join the server.
-Do this by running the following commands
+You need to open your FiveM ports so you can set up txAdmin and join the server.
+Run the following commands:
 
 ```bash
 ufw allow 30120/tcp
@@ -112,22 +115,22 @@ ufw allow 30120/udp
 ufw allow 40120/tcp
 ```
 
-## Step 7: Start your server
+## Step 7: Start Your Server
 
-Run the following command to start your server
+Run the following command to start your server:
 
 ```bash
 ./run.sh
 ```
 
-You will be greeted by this screen after starting your server.
+After starting your server, you'll see this screen:
 
 <img
   src="/images/linux/fivemserversetup/startfivemserver.jpg"
-  alt="FiveM txadmin screen on linux vps"
+  alt="FiveM txAdmin screen on Linux VPS"
 />
 
-Head to that website you see on that screen put in the pin from the screenshot and follow the next steps.
+Open the website shown on that screen, enter the PIN from the screenshot, and follow the next steps.
 
 ## Step 8: Configure Your Server Name
 
@@ -169,7 +172,7 @@ This is the easiest option for beginners. Select a template from a curated list 
 
 ## Step 10: Review Recipe
 
-After selecting your deployment type, you'll be presented with the recipe configuration. This shows you the YAML configuration that will be used to set up your server.
+After you select your deployment type, txAdmin shows the recipe configuration — the YAML used to set up your server.
 
 <img
   src="/images/txAdmin/txAdminTutorial-image5.png"
@@ -185,7 +188,7 @@ The recipe includes:
 You can review the recipe and make any changes if needed. However, for most users, the default configuration works perfectly.
 
 <Tip>
-  Simply click **Next** to proceed with the default recipe configuration. The recipe is pre-configured to work out of the box.
+  Click **Next** to proceed with the default recipe. It's pre-configured to work out of the box.
 </Tip>
 
 ## Step 11: Enter Server Registration Key
@@ -212,7 +215,7 @@ Once you've entered your key, click **Run Recipe** to proceed with the server se
 
 ## Step 12: Configure server.cfg
 
-After the recipe runs, you'll be presented with the `server.cfg` file editor. This is your server's main configuration file where you can customize various settings.
+After the recipe runs, txAdmin opens the `server.cfg` file editor — your server's main configuration file, where you can customize various settings.
 
 <img
   src="/images/txAdmin/txAdminTutorial-image8.png"

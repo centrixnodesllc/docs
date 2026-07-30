@@ -4,14 +4,14 @@ description: "How to setup MariaDB on a Linux Server"
 icon: "database"
 ---
 
-### Step 1: Update the System
+## Step 1: Update the System
 Before installing MariaDB, it's a good practice to update your system's package list and upgrade existing packages to their latest versions. Open a terminal and run the following commands:
 
 ```bash
 sudo apt-get update
 sudo apt-get upgrade
 ```
-### Step 2: Install MariaDB
+## Step 2: Install MariaDB
 Once your system is up to date, you can install MariaDB using the package manager. For Ubuntu or Debian-based systems, use the following command:
 
 ```bash
@@ -21,7 +21,7 @@ For CentOS or Red Hat-based systems, use:
 ```bash
 sudo yum install mariadb-server
 ```
-### Step 3: Secure MariaDB Installation
+## Step 3: Secure MariaDB Installation
 After installation, it's crucial to secure your MariaDB installation. Run the following command to start the security script:
 
 ```bash
@@ -29,7 +29,7 @@ sudo mysql_secure_installation
 ```
 Follow the prompts to set a root password, remove anonymous users, disallow root login remotely, remove the test database, and reload the privilege tables.
 
-### Step 4: Start and Enable MariaDB Service
+## Step 4: Start and Enable MariaDB Service
 To ensure that MariaDB starts automatically at boot, you can enable the service with the following command:
 
 ```bash
@@ -39,14 +39,14 @@ To start the MariaDB service immediately, use:
 ```bash
 sudo systemctl start mariadb
 ```
-### Step 5: Access MariaDB
+## Step 5: Access MariaDB
 You can access the MariaDB server using the MySQL client. To log in as the root user, run:
 
 ```bash
 sudo mysql -u root -p
 ```
 Enter the root password you set during the secure installation process to access the MariaDB command-line interface.
-### Step 6: Create a New Database and User (Optional)
+## Step 6: Create a New Database and User (Optional)
 If you need to create a new database and user, you can do so using the following SQL commands:
 
 ```sql
