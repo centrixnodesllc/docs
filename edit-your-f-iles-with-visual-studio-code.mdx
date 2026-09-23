@@ -1,0 +1,73 @@
+---
+title: "Edit Your FIles With Visual Studio Code"
+---
+
+### Installing the Visual Studio Code Plugin
+
+1. Install the Pterodactyl SFTP Plugin in the extension marketplace you can install from this link [Pterodactyl SFTP | Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=minhmcpc.pterodactyl-sftp) It will redirect you to your vscode install.
+
+![Image](/images/image.png "Image")
+
+### Configuring the plugin<br />
+
+1. Next we have to create a account in the extension. Once installed click this icon below on the sidebar of your vscode and then click the the <Icon icon="plus" color="#64748B" /> button
+
+<img
+  src="/images/image4.png"
+  alt="Image4"
+  title="Image4"
+  style={{ width:"20%" }}
+/>
+
+<img
+  src="/images/dasybd8aygbsioydgbaoysgdgoiya.png"
+  alt="Dasybd8aygbsioydgbaoysgdgoiya"
+  title="Dasybd8aygbsioydgbaoysgdgoiya"
+  style={{ width:"55%" }}
+/>
+
+3. Next we will run through the setup, You will see this window. <br />- For `Display Name` you can name this to whatever to make it comfortable for you. <br />- For `Panel URL` you will use `https://panel.centrixnodes.net` <br />- For username your going to use your panel username you can find this at [CentrixNodes Panel | Accounts](https://panel.centrixnodes.net/account) or on the bottom left of your screen.<br />- We are going to stop here for now as we have to create the **API Credentials**<br />- Make sure to select **Auto Configure SSH Key**
+   ![Image](/images/image-1.png "Image")
+
+#### Creating your API Credentials
+
+1. Navigate to your panels accounts page or click this link [CentrixNodes Panel | Accounts](https://panel.centrixnodes.net/account) 
+2. Navigate to the **API Credentials** or **API Keys** Tab
+   <img
+     src="/images/image-3.png"
+     alt="Image"
+     title="Image"
+     style={{ width:"49%" }}
+   />
+3. Next your going to click **Add a Key** or **New Key.**
+   ![Image](/images/image-4.png "Image")
+
+4. Next your going to create a description for you key you can name it whatever you wany but for this example I will name it VSCODE. For security reasons I would recommend you whitelisting your ip but it is not needed. Next copy the key that was provided.
+   ![Image](/images/image-8.png "Image")
+
+### Finishing configuration
+
+1. Go back to your vscode and paste the key that was provided.
+
+<Note>
+  Make sure to have **Auto-configure SSH Key Selected.**
+</Note>
+
+![Image](/images/image-9.png "Image")
+
+2. Click add account
+
+<img
+  src="/images/image-10.png"
+  alt="Image"
+  title="Image"
+  style={{ width:"31%" }}
+/>
+
+## Congrats you should be able to see all of your servers in vscode!
+
+![Image](/images/image-11.png "Image")
+
+If you want to remote into one of them click the connect icon next to the name!
+
+![Image](/images/image-13.png "Image")

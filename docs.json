@@ -35,7 +35,8 @@
                   "game/2fa",
                   "game/users",
                   "game/backups",
-                  "game/databases"
+                  "game/databases",
+                  "edit-your-f-iles-with-visual-studio-code"
                 ]
               }
             ]
